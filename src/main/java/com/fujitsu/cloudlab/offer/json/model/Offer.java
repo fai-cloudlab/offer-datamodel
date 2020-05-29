@@ -1,26 +1,20 @@
 package com.fujitsu.cloudlab.offer.json.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fujitsu.cloudlab.offer.json.model.Customer;
-import com.fujitsu.cloudlab.offer.json.model.Price;
-import com.fujitsu.cloudlab.offer.json.model.Product;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.UUID;
-import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import org.springframework.validation.annotation.Validated;
 
-/**
- * Offer
- */
+/** Offer */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-29T10:52:59.498-05:00")
-
-public class Offer implements Serializable{
+@javax.annotation.Generated(
+    value = "io.swagger.codegen.languages.SpringCodegen",
+    date = "2020-05-29T10:52:59.498-05:00")
+public class Offer implements Serializable {
   @JsonProperty("offerId")
   private UUID offerId = null;
 
@@ -49,13 +43,12 @@ public class Offer implements Serializable{
 
   /**
    * Get offerId
+   *
    * @return offerId
-  **/
+   */
   @ApiModelProperty(example = "d290f1ee-6c54-4b01-90e6-d701748f0851", required = true, value = "")
   @NotNull
-
   @Valid
-
   public UUID getOfferId() {
     return offerId;
   }
@@ -71,12 +64,11 @@ public class Offer implements Serializable{
 
   /**
    * Get offerType
+   *
    * @return offerType
-  **/
+   */
   @ApiModelProperty(example = "BlackFridaySpl2020", required = true, value = "")
   @NotNull
-
-
   public String getOfferType() {
     return offerType;
   }
@@ -92,12 +84,11 @@ public class Offer implements Serializable{
 
   /**
    * Get offerPrice
+   *
    * @return offerPrice
-  **/
+   */
   @ApiModelProperty(value = "")
-
   @Valid
-
   public Price getOfferPrice() {
     return offerPrice;
   }
@@ -113,12 +104,12 @@ public class Offer implements Serializable{
 
   /**
    * Get offerCreationDate
+   *
    * @return offerCreationDate
-  **/
+   */
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-@Pattern(regexp="^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[\\+\\-]\\d{4})$") 
+  @Pattern(regexp = "^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[\\+\\-]\\d{4})$")
   public String getOfferCreationDate() {
     return offerCreationDate;
   }
@@ -134,12 +125,12 @@ public class Offer implements Serializable{
 
   /**
    * Get offerExpirationDate
+   *
    * @return offerExpirationDate
-  **/
+   */
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-@Pattern(regexp="^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[\\+\\-]\\d{4})$") 
+  @Pattern(regexp = "^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[\\+\\-]\\d{4})$")
   public String getOfferExpirationDate() {
     return offerExpirationDate;
   }
@@ -155,13 +146,12 @@ public class Offer implements Serializable{
 
   /**
    * Get product
+   *
    * @return product
-  **/
+   */
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
   @Valid
-
   public Product getProduct() {
     return product;
   }
@@ -177,12 +167,11 @@ public class Offer implements Serializable{
 
   /**
    * Get customer
+   *
    * @return customer
-  **/
+   */
   @ApiModelProperty(value = "")
-
   @Valid
-
   public Customer getCustomer() {
     return customer;
   }
@@ -190,7 +179,6 @@ public class Offer implements Serializable{
   public void setCustomer(Customer customer) {
     this.customer = customer;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -201,30 +189,33 @@ public class Offer implements Serializable{
       return false;
     }
     Offer offer = (Offer) o;
-    return Objects.equals(this.offerId, offer.offerId) &&
-        Objects.equals(this.offerType, offer.offerType) &&
-        Objects.equals(this.offerPrice, offer.offerPrice) &&
-        Objects.equals(this.offerCreationDate, offer.offerCreationDate) &&
-        Objects.equals(this.offerExpirationDate, offer.offerExpirationDate) &&
-        Objects.equals(this.product, offer.product) &&
-        Objects.equals(this.customer, offer.customer);
+    return Objects.equals(this.offerId, offer.offerId)
+        && Objects.equals(this.offerType, offer.offerType)
+        && Objects.equals(this.offerPrice, offer.offerPrice)
+        && Objects.equals(this.offerCreationDate, offer.offerCreationDate)
+        && Objects.equals(this.offerExpirationDate, offer.offerExpirationDate)
+        && Objects.equals(this.product, offer.product)
+        && Objects.equals(this.customer, offer.customer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offerId, offerType, offerPrice, offerCreationDate, offerExpirationDate, product, customer);
+    return Objects.hash(
+        offerId, offerType, offerPrice, offerCreationDate, offerExpirationDate, product, customer);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Offer {\n");
-    
+
     sb.append("    offerId: ").append(toIndentedString(offerId)).append("\n");
     sb.append("    offerType: ").append(toIndentedString(offerType)).append("\n");
     sb.append("    offerPrice: ").append(toIndentedString(offerPrice)).append("\n");
     sb.append("    offerCreationDate: ").append(toIndentedString(offerCreationDate)).append("\n");
-    sb.append("    offerExpirationDate: ").append(toIndentedString(offerExpirationDate)).append("\n");
+    sb.append("    offerExpirationDate: ")
+        .append(toIndentedString(offerExpirationDate))
+        .append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
@@ -232,8 +223,7 @@ public class Offer implements Serializable{
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -242,4 +232,3 @@ public class Offer implements Serializable{
     return o.toString().replace("\n", "\n    ");
   }
 }
-

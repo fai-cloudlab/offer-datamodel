@@ -1,23 +1,19 @@
 package com.fujitsu.cloudlab.offer.json.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fujitsu.cloudlab.offer.json.model.Price;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import org.springframework.validation.annotation.Validated;
 
-/**
- * Product
- */
+/** Product */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-29T10:52:59.498-05:00")
-
-public class Product implements Serializable{
+@javax.annotation.Generated(
+    value = "io.swagger.codegen.languages.SpringCodegen",
+    date = "2020-05-29T10:52:59.498-05:00")
+public class Product implements Serializable {
   @JsonProperty("productCode")
   private String productCode = null;
 
@@ -40,12 +36,11 @@ public class Product implements Serializable{
 
   /**
    * Get productCode
+   *
    * @return productCode
-  **/
+   */
   @ApiModelProperty(example = "LPTP001", required = true, value = "")
   @NotNull
-
-
   public String getProductCode() {
     return productCode;
   }
@@ -61,12 +56,11 @@ public class Product implements Serializable{
 
   /**
    * Get productType
+   *
    * @return productType
-  **/
+   */
   @ApiModelProperty(example = "Laptop", required = true, value = "")
   @NotNull
-
-
   public String getProductType() {
     return productType;
   }
@@ -82,12 +76,11 @@ public class Product implements Serializable{
 
   /**
    * Get productCategory
+   *
    * @return productCategory
-  **/
+   */
   @ApiModelProperty(example = "Home Computing", required = true, value = "")
   @NotNull
-
-
   public String getProductCategory() {
     return productCategory;
   }
@@ -103,12 +96,11 @@ public class Product implements Serializable{
 
   /**
    * Get productDescription
+   *
    * @return productDescription
-  **/
+   */
   @ApiModelProperty(example = "Laptop XPS7950", required = true, value = "")
   @NotNull
-
-
   public String getProductDescription() {
     return productDescription;
   }
@@ -124,13 +116,12 @@ public class Product implements Serializable{
 
   /**
    * Get productPrice
+   *
    * @return productPrice
-  **/
+   */
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
   @Valid
-
   public Price getProductPrice() {
     return productPrice;
   }
@@ -138,7 +129,6 @@ public class Product implements Serializable{
   public void setProductPrice(Price productPrice) {
     this.productPrice = productPrice;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,23 +139,24 @@ public class Product implements Serializable{
       return false;
     }
     Product product = (Product) o;
-    return Objects.equals(this.productCode, product.productCode) &&
-        Objects.equals(this.productType, product.productType) &&
-        Objects.equals(this.productCategory, product.productCategory) &&
-        Objects.equals(this.productDescription, product.productDescription) &&
-        Objects.equals(this.productPrice, product.productPrice);
+    return Objects.equals(this.productCode, product.productCode)
+        && Objects.equals(this.productType, product.productType)
+        && Objects.equals(this.productCategory, product.productCategory)
+        && Objects.equals(this.productDescription, product.productDescription)
+        && Objects.equals(this.productPrice, product.productPrice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productCode, productType, productCategory, productDescription, productPrice);
+    return Objects.hash(
+        productCode, productType, productCategory, productDescription, productPrice);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Product {\n");
-    
+
     sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    productCategory: ").append(toIndentedString(productCategory)).append("\n");
@@ -176,8 +167,7 @@ public class Product implements Serializable{
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -186,4 +176,3 @@ public class Product implements Serializable{
     return o.toString().replace("\n", "\n    ");
   }
 }
-

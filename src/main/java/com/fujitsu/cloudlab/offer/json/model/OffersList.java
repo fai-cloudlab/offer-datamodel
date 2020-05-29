@@ -1,26 +1,21 @@
 package com.fujitsu.cloudlab.offer.json.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fujitsu.cloudlab.offer.json.model.Offer;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.validation.annotation.Validated;
+import java.util.Objects;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import org.springframework.validation.annotation.Validated;
 
-/**
- * OffersList
- */
+/** OffersList */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-29T10:52:59.498-05:00")
-
-public class OffersList implements Serializable{
+@javax.annotation.Generated(
+    value = "io.swagger.codegen.languages.SpringCodegen",
+    date = "2020-05-29T10:52:59.498-05:00")
+public class OffersList implements Serializable {
   @JsonProperty("offers")
   @Valid
   private List<Offer> offers = null;
@@ -40,12 +35,11 @@ public class OffersList implements Serializable{
 
   /**
    * Offers is list of offers
+   *
    * @return offers
-  **/
+   */
   @ApiModelProperty(value = "Offers is list of offers")
-
   @Valid
-
   public List<Offer> getOffers() {
     return offers;
   }
@@ -53,7 +47,6 @@ public class OffersList implements Serializable{
   public void setOffers(List<Offer> offers) {
     this.offers = offers;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -76,15 +69,14 @@ public class OffersList implements Serializable{
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OffersList {\n");
-    
+
     sb.append("    offers: ").append(toIndentedString(offers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -93,4 +85,3 @@ public class OffersList implements Serializable{
     return o.toString().replace("\n", "\n    ");
   }
 }
-

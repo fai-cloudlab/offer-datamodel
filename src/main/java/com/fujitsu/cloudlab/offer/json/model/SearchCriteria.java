@@ -1,27 +1,21 @@
 package com.fujitsu.cloudlab.offer.json.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fujitsu.cloudlab.offer.json.model.Customer;
-import com.fujitsu.cloudlab.offer.json.model.Product;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.validation.annotation.Validated;
+import java.util.Objects;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import org.springframework.validation.annotation.Validated;
 
-/**
- * SearchCriteria
- */
+/** SearchCriteria */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-29T10:52:59.498-05:00")
-
-public class SearchCriteria implements Serializable{
+@javax.annotation.Generated(
+    value = "io.swagger.codegen.languages.SpringCodegen",
+    date = "2020-05-29T10:52:59.498-05:00")
+public class SearchCriteria implements Serializable {
   @JsonProperty("products")
   @Valid
   private List<Product> products = null;
@@ -44,12 +38,11 @@ public class SearchCriteria implements Serializable{
 
   /**
    * Get products
+   *
    * @return products
-  **/
+   */
   @ApiModelProperty(value = "")
-
   @Valid
-
   public List<Product> getProducts() {
     return products;
   }
@@ -65,12 +58,11 @@ public class SearchCriteria implements Serializable{
 
   /**
    * Get customer
+   *
    * @return customer
-  **/
+   */
   @ApiModelProperty(value = "")
-
   @Valid
-
   public Customer getCustomer() {
     return customer;
   }
@@ -78,7 +70,6 @@ public class SearchCriteria implements Serializable{
   public void setCustomer(Customer customer) {
     this.customer = customer;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,8 +80,8 @@ public class SearchCriteria implements Serializable{
       return false;
     }
     SearchCriteria searchCriteria = (SearchCriteria) o;
-    return Objects.equals(this.products, searchCriteria.products) &&
-        Objects.equals(this.customer, searchCriteria.customer);
+    return Objects.equals(this.products, searchCriteria.products)
+        && Objects.equals(this.customer, searchCriteria.customer);
   }
 
   @Override
@@ -102,7 +93,7 @@ public class SearchCriteria implements Serializable{
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SearchCriteria {\n");
-    
+
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
@@ -110,8 +101,7 @@ public class SearchCriteria implements Serializable{
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -120,4 +110,3 @@ public class SearchCriteria implements Serializable{
     return o.toString().replace("\n", "\n    ");
   }
 }
-
